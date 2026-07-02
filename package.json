@@ -1,0 +1,28 @@
+{
+  "name": "nextest-genie",
+  "version": "1.0.0",
+  "description": "NexTest Genie — Agentic UI Automation Framework powered by Playwright MCP + Google Gemini AI",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:unit": "npx playwright test --config playwright.unit.config.ts",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "report": "npx playwright show-report reports/html",
+    "genie": "tsx src/generator/cli.ts",
+    "generate": "tsx src/generator/cli.ts generate",
+    "achieve": "tsx src/generator/cli.ts achieve",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": ["playwright", "ai", "testing", "automation", "gemini", "mcp", "agentic"],
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@playwright/mcp": "1.52.0-alpha-2025-03-26",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.2"
+  }
+}

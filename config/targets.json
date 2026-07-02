@@ -1,0 +1,59 @@
+{
+  "$comment": "Application(s) Under Test. Committed to git — NEVER put real passwords here. Credentials are referenced by the NAME of an environment variable (see *Env fields) and resolved at runtime from .env / CI secrets. Select the active environment with GENIE_ENV (default below).",
+
+  "defaultEnv": "playwright-docs",
+
+  "environments": {
+    "local": {
+      "baseURL": "http://localhost:3000",
+      "description": "Local dev server",
+      "auth": {
+        "required": false
+      }
+    },
+
+    "staging": {
+      "baseURL": "https://staging.app.example.com",
+      "description": "Shared staging environment",
+      "auth": {
+        "required": true,
+        "type": "form",
+        "loginPath": "/login",
+        "usernameEnv": "STAGING_USERNAME",
+        "passwordEnv": "STAGING_PASSWORD",
+        "selectors": {
+          "username": "#username",
+          "password": "#password",
+          "submit": "button[type=submit]"
+        },
+        "successUrl": "/dashboard"
+      }
+    },
+
+    "prod": {
+      "baseURL": "https://app.example.com",
+      "description": "Production (read-only smoke tests only)",
+      "auth": {
+        "required": true,
+        "type": "form",
+        "loginPath": "/login",
+        "usernameEnv": "PROD_USERNAME",
+        "passwordEnv": "PROD_PASSWORD",
+        "selectors": {
+          "username": "#username",
+          "password": "#password",
+          "submit": "button[type=submit]"
+        },
+        "successUrl": "/dashboard"
+      }
+    },
+
+    "playwright-docs": {
+      "baseURL": "https://playwright.dev",
+      "description": "Public demo target used by the example suite — no auth",
+      "auth": {
+        "required": false
+      }
+    }
+  }
+}

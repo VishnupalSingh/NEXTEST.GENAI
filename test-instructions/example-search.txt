@@ -1,0 +1,4 @@
+On the home page, open the search.
+Type "assertions" into the search box and press Enter.
+Wait for the results list to appear.
+Verify that at least one result links to a page whose title mentions "assertions".

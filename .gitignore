@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.env
+
+# Playwright test outputs (videos, traces, screenshots)
+reports/test-results/
+reports/html/
+reports/recordings/
+
+# Token usage ledger and atomic-write temp files
+reports/.token-usage.jsonl
+reports/*.tmp
+
+# Saved auth sessions (storageState) — contain live cookies/tokens
+reports/.auth/
+
+# Keep the healed-locators cache and AI summary
+!reports/healed-locators.json
